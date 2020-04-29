@@ -57,15 +57,15 @@ def make_thumbnail(title_text, difficultiy_tag, topic_tags):
     name_text_offset_h = base.size[0] - get_word_size(name_text, TAG_FONT_SIZE) + PAD
     name_text_offset_v = base.size[1] - PAD - TAG_FONT_SIZE
     multiline_tags = parse_topic_tags(topic_tags, TAG_FONT_SIZE, PAD, base.size[0])
-    base_img = base.copy()
+    image = base.copy()
     title_font = ImageFont.truetype(font_path, TITLE_FONT_SIZE)
     tag_font = ImageFont.truetype(font_path, TAG_FONT_SIZE)
-    draw = ImageDraw.Draw(base_img) 
+    draw = ImageDraw.Draw(image) 
     draw.multiline_text((PAD, PAD), multiline_title_text, font = title_font, fill='black') 
     draw.text((PAD,diff_tag_offset), difficultiy_tag, font = tag_font, fill=diff_tag_color[difficultiy_tag]) 
     draw.multiline_text((PAD,topic_tag_offset), multiline_tags, font = tag_font, fill='gray') 
     draw.text((name_text_offset_h,name_text_offset_v), name_text, font = tag_font, fill='black') 
-    base_img.save(os.path.join(out_dir, make_save_filename(title_text)))
+    image.save(os.path.join(out_dir, make_save_filename(title_text)))
 
     
 if __name__ == '__main__':
