@@ -32,7 +32,7 @@ def get_word_size(word, font_size):
 
 def text_to_multiline(text, font_size, pad, line_width):
     multiline_text = []
-    curr_line_width = 2 * pad
+    curr_line_width = 4 * pad
     for word in text.split():
         word_size = get_word_size(word, font_size)
         if curr_line_width + word_size > line_width:
