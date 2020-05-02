@@ -78,18 +78,24 @@ def make_thumbnail(title_text, difficultiy_tags, topic_tags):
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('parameters to program')
-    parser.add_argument('mode', type=str, default='single', choices=['single', 'batch'])
+    parser.add_argument('mode', type=str, default='single', choices=['single', 'batch', 'tail'])
     parser.add_argument('--title', type=str, default='')
     parser.add_argument('--diff', type=str, default='')
     parser.add_argument('--tags', type=str, default='')
     parser.add_argument('--csv', type=str, default='')
+    parser.add_argument('--n', type=int, default=1)
     args = parser.parse_args()
     
     if args.mode == 'single':
         assert all((args.title, args.diff, args.tags)), 'need input for single processing'
         make_thumbnail(args.title, args.diff, args.tags)
-    else:
+    elif args.mode == 'batch':
         assert args.csv, 'need csv file for batch processing'
         df = pd.read_csv(args.csv)
         for i, row in tqdm(df.iterrows(), total=df.shape[0]):
+            make_thumbnail(row['title'], row['diff'], row['tags'])
+    else:
+        assert args.csv, 'need csv file for batch tail processing'
+        df = pd.read_csv(args.csv)
+        for i, row in tqdm(df.iloc[-args.n:,:].iterrows(), total=args.n):
             make_thumbnail(row['title'], row['diff'], row['tags'])
