@@ -89,3 +89,4 @@
 "387 First Unique Character in a String","Easy","Hash Table","https://youtu.be/nFiAUwTH0zY","https://leetcode.com/problems/first-unique-character-in-a-string/","https://github.com/ryancheunggit/leetcode/code/387_solution.py"
 "273 Integer to English Words","Hard","String|Recursion","https://youtu.be/1V1n7BEXSdw","https://leetcode.com/problems/integer-to-english-words/","https://github.com/ryancheunggit/leetcode/code/273_solution.py"
 "169 Majority Element","Easy","Hash Table|Bit","https://youtu.be/pMZYF_ziA3Y","https://leetcode.com/problems/majority-element/","https://github.com/ryancheunggit/leetcode/code/169_solution.py"
+"689 Maximum Sum of 3 Non-Overlapping Subarrays","Hard","Sliding Window|Dynamic Programming","https://youtu.be/r_uJ9Vlqaqs","https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/","https://github.com/ryancheunggit/leetcode/code/689_solution.py"
