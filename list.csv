@@ -92,3 +92,4 @@
 "689 Maximum Sum of 3 Non-Overlapping Subarrays","Hard","Sliding Window|Dynamic Programming","https://youtu.be/r_uJ9Vlqaqs","https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/","https://github.com/ryancheunggit/leetcode/code/689_solution.py"
 "993 Cousins in Binary Tree","Easy","Tree|Breadth First Search|Hash Table","https://youtu.be/uq3HlU64Yv4","https://leetcode.com/problems/cousins-in-binary-tree/","https://github.com/ryancheunggit/leetcode/code/993_solution.py"
 "1232 Check If It Is a Straight Line","Easy","Math","https://youtu.be/74tsCklVyYk","https://leetcode.com/problems/check-if-it-is-a-straight-line/","https://github.com/ryancheunggit/leetcode/code/1232_solution.py"
+"42 Trapping Rain Water","Hard","Two Pointers","https://youtu.be/pDRdib7prxU","https://leetcode.com/problems/trapping-rain-water/","https://github.com/ryancheunggit/leetcode/code/42_solution.py"
