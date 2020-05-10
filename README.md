@@ -16,6 +16,4 @@ Camera AC Adapter: Gonine AC-PW20 AC Power Supply Adapter: https://amzn.to/3fy1l
 Camera Microphone: Sony ECMGZ1M in Gun mode: https://amzn.to/3cl9ccn
 Tripod: Manfrotto PIXI Mini https://amzn.to/3dpPTP4
 
-
-
-
+Buy me a book to read: https://www.buymeacoffee.com/zhangren88
