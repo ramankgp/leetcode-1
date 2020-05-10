@@ -1,19 +1,16 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
 class Solution {
 public:
-    ListNode* middleNode(ListNode* head) {
-        ListNode *node = head;
-        int n;
-        for (n=0;node;n++) node=node->next;
-        node = head;
-        for (int i=0;i<n/2;i++) node=node->next;
-        return node;
+    // -> NklogK
+    string hash(string str) {
+        sort(str.begin(), str.end());
+        return str;
+    }
+    
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<string, vector<string>> group_by;
+        vector<vector<string>> anagrams;
+        for (auto str: strs) group_by[hash(str)].push_back(str);
+        for (auto group: group_by) anagrams.push_back(group.second);
+        return anagrams;
     }
 };
