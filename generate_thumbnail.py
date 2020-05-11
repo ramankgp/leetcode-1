@@ -46,11 +46,12 @@ def parse_topic_tags(tags, font_size, pad, line_width):
     tags = ' '.join(tags.split('|')[:MAX_TAGS])
     return text_to_multiline(tags, font_size, pad, line_width)
 
-def make_save_filename(title_text):
+def make_save_filename(title_text, target='yt'):
     title_text = ''.join(c for c in title_text if c.isalnum())
-    return title_text + '_thumbnail.png'
+    title_text += '_thumbnail.png' if target == 'yt' else '_bli_thumbnail.png'
+    return title_text
 
-def make_thumbnail(title_text, difficultiy_tags, topic_tags):
+def make_thumbnail(title_text, difficultiy_tags, topic_tags, target):
     image = base.copy()
     title_font = ImageFont.truetype(font_path, TITLE_FONT_SIZE)
     tag_font = ImageFont.truetype(font_path, TAG_FONT_SIZE)
@@ -73,12 +74,15 @@ def make_thumbnail(title_text, difficultiy_tags, topic_tags):
 
     draw.multiline_text((PAD,topic_tag_offset), multiline_tags, font = tag_font, fill='gray') 
     draw.text((name_text_offset_h,name_text_offset_v), name_text, font = tag_font, fill='black') 
-    image.save(os.path.join(out_dir, make_save_filename(title_text)))
+    if target == 'bli':
+        image = image.resize((1146, 717))
+    image.save(os.path.join(out_dir, make_save_filename(title_text, target)))
 
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('parameters to program')
     parser.add_argument('mode', type=str, default='single', choices=['single', 'batch', 'tail'])
+    parser.add_argument('--target', type=str, default='yt', choices=['yt', 'bli'])
     parser.add_argument('--title', type=str, default='')
     parser.add_argument('--diff', type=str, default='')
     parser.add_argument('--tags', type=str, default='')
@@ -88,14 +92,14 @@ if __name__ == '__main__':
     
     if args.mode == 'single':
         assert all((args.title, args.diff, args.tags)), 'need input for single processing'
-        make_thumbnail(args.title, args.diff, args.tags)
+        make_thumbnail(args.title, args.diff, args.tags, args.target)
     elif args.mode == 'batch':
         assert args.csv, 'need csv file for batch processing'
         df = pd.read_csv(args.csv)
         for i, row in tqdm(df.iterrows(), total=df.shape[0]):
-            make_thumbnail(row['title'], row['diff'], row['tags'])
+            make_thumbnail(row['title'], row['diff'], row['tags'], args.target)
     else:
         assert args.csv, 'need csv file for batch tail processing'
         df = pd.read_csv(args.csv)
         for i, row in tqdm(df.iloc[-args.n:,:].iterrows(), total=args.n):
-            make_thumbnail(row['title'], row['diff'], row['tags'])
+            make_thumbnail(row['title'], row['diff'], row['tags'], args.target)
