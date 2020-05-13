@@ -24,7 +24,7 @@ date: May-11-2020
 | ~        | complement         | switch each 0 to 1 and each 1 to 0 |        ~0101 = 1010 |                                         `~x = -x - 1` and  `~(x - 1) = -x` |
 | &        | and                | 1 iff both bits are 1 else 0       |  0110 & 0101 = 0100 |             `x & - x` to extract last bit, `x & (x - 1)` to clear last bit |
 | \|       | or                 | 0 iff both bits are 0 else 1       | 0110 \| 0101 = 0111 |                                               `flags |= x` to set the flag |
-| ^        | xor (eXclusive OR) | 1 iff only one bit is 1 else 0     |  0110 ^ 0101 = 0011 | `0 ^ x = x`, `x ^ x = 0` simple checksum `reduce(operator.xor_, words, 0)` |
+| ^        | xor (eXclusive OR) | 1 iff only one bit is 1 else 0     |  0110 ^ 0101 = 0011 | `0 ^ x = x`, `x ^ x = 0` simple checksum `reduce(operator.xor, words, 0)` |
 | <<       | left shift         | shift bits to left                 |    0011 << 2 = 1100 |                                                 `x << y` is $x \times 2^y$ |
 | >>       | right shift        | shift bits to right                |    0110 >> 2 = 0001 |                                   `x >> y` is $\lfloor{x \div 2^y}\rfloor$ |
 
