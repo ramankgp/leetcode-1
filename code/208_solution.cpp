@@ -28,6 +28,15 @@ public:
 class Trie {
 private:
     TrieNode* root;
+    TrieNode* find(string term){
+        TrieNode* node = root;
+        for (char c:term){
+            if (not node->contains(c)) return nullptr;
+            node = node->get_child(c);
+        }
+        return node;
+    }
+    
 public:
     /** Initialize your data structure here. */
     Trie() {root = new TrieNode();}
@@ -44,22 +53,24 @@ public:
     
     /** Returns if the word is in the trie. */
     bool search(string word) {
-        TrieNode* node = root;
-        for (char c:word){
-            if (not node->contains(c)) return false;
-            node = node->get_child(c);
-        }
-        return node->get_flag();
+        // TrieNode* node = root;
+        // for (char c:word){
+        //     if (not node->contains(c)) return false;
+        //     node = node->get_child(c);
+        // }
+        TrieNode* node = find(word);
+        return node ? node->get_flag() : false;
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) {
-        TrieNode* node = root;
-        for (char c:prefix){
-            if (not node->contains(c)) return false;
-            node = node->get_child(c);
-        }
-        return true;
+        // TrieNode* node = root;
+        // for (char c:prefix){
+        //     if (not node->contains(c)) return false;
+        //     node = node->get_child(c);
+        // }
+        TrieNode* node = find(prefix);
+        return node ? true : false;
     }
 };
 
