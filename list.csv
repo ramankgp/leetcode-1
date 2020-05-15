@@ -103,3 +103,4 @@
 "461/477 (Total) Hamming Distance","Easy|Medium","Bit Manipulation","https://youtu.be/tvXyP0TmaSo","https://leetcode.com/problems/hamming-distance/|https://leetcode.com/problems/total-hamming-distance/","https://github.com/ryancheunggit/leetcode/code/461_solution.cpp|https://github.com/ryancheunggit/leetcode/code/477_solution.cpp"
 "208 Implement Trie (Prefix Tree)","Medium","Trie","https://youtu.be/Qg7Zc4YIuE0","https://leetcode.com/problems/implement-trie-prefix-tree/","https://github.com/ryancheunggit/leetcode/code/208_solution.cpp"
 "137 Single Number II","Medium","Bit Manipulation","https://youtu.be/ObjpmBlAnOs","https://leetcode.com/problems/single-number-ii/","https://github.com/ryancheunggit/leetcode/code/137_solution.cpp"
+"918 Maximum Sum Circular Subarray","Medium","Array","https://youtu.be/aLMZIfhhdMg","https://leetcode.com/problems/maximum-sum-circular-subarray/","https://github.com/ryancheunggit/leetcode/code/918_solution.cpp"
