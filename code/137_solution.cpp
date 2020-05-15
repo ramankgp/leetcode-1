@@ -33,6 +33,9 @@ public:
         //     if (first[i]^first[31]) result += 1 << i;
         // }
         // return first[31] ? ~result : result; 
+        // for (int i=0;i<32;i++) result |= first[i] << i;
+        // return result;
+                
         int first=0, second=0;
         for (int num:nums){
             first = ~second & (first ^ num);
