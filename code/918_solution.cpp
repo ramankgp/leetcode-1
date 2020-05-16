@@ -3,8 +3,8 @@
 // accum[b]-accum[a] = sum(A[:b]) - sum(A[:a]) = sum(A[a:b])
 
     
-// if sum(A[c:b]) is the maximum circular(strict) subarray sum 
-// then b = max(A) and c = min(A)
+// if sum(A[c:b]) is the maximum circular(meaning b < c) subarray sum 
+// then b = argmax_i{accum[i]} and c = argmin_i{accum[i]}.
 
     
 //          b
